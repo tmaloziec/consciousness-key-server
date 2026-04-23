@@ -1,0 +1,30 @@
+{
+  "name": "consciousness-key-server",
+  "version": "0.1.0",
+  "description": "Zero-dependency secrets / SSH-key vault for multi-agent AI systems (Consciousness Server, Cortex, etc.)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "lint": "node --check server.js",
+    "test": "node -e \"console.log('tests not implemented yet')\" && exit 0"
+  },
+  "keywords": [
+    "secrets",
+    "ssh",
+    "vault",
+    "multi-agent",
+    "consciousness-server",
+    "cortex"
+  ],
+  "author": "Tomasz Małozięć (@tmaloziec)",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/build-on-ai/consciousness-key-server.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}

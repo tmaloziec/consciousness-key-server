@@ -1,0 +1,29 @@
+# Consciousness Key Server CODEOWNERS — this is a secrets vault, every path matters.
+#
+# Branch protection + CODEOWNERS together enforce that security-sensitive
+# changes go through a reviewer. Don't relax an invariant silently.
+
+# Default — any change touches something people trust.
+*                              @tmaloziec
+
+# Core server — auth, path-traversal guards, audit log.
+/server.js                     @tmaloziec
+
+# Configuration surface that ships with the repo.
+/auth/allowed-clients.example.json  @tmaloziec
+/.env.example                  @tmaloziec
+
+# CI + this file itself. Otherwise a PR could disable the guards or drop
+# ownership in the same diff.
+/.github/                      @tmaloziec
+/CODEOWNERS                    @tmaloziec
+
+# Licensing surface.
+/LICENSE                       @tmaloziec
+/LICENSE-COMMERCIAL.md         @tmaloziec
+/CLA.md                        @tmaloziec
+
+# Container image.
+/Dockerfile                    @tmaloziec
+/docker-compose.yml            @tmaloziec
+/.dockerignore                 @tmaloziec

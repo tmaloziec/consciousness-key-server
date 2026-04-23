@@ -1,0 +1,19 @@
+{
+  "_comment": "Copy to auth/allowed-clients.json and adapt. allowed_ips accepts bare IPs or CIDR-like prefixes (first 3 octets matched for /24-style ranges). api_keys maps a client name to a secret — callers must send it as the X-API-Key header.",
+
+  "_docker_note": "When running in Docker, requests from the host come in via the docker bridge gateway (typically 172.17.0.0/24 or 10.0.0.0/24 for custom networks). Add that range if testing from the host; or use docker exec to hit localhost from inside the container.",
+
+  "allowed_ips": [
+    "127.0.0.1",
+    "::1",
+    "10.0.0.0/24",
+    "172.17.0.0/24",
+    "172.18.0.0/24"
+  ],
+
+  "api_keys": {
+    "consciousness-server": "replace-me-with-a-long-random-string",
+    "cortex": "replace-me-with-another-long-random-string",
+    "ci-runner": "replace-me-with-yet-another"
+  }
+}

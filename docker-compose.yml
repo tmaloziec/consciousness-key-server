@@ -1,0 +1,27 @@
+services:
+  key-server:
+    build: .
+    image: consciousness-key-server:local
+    container_name: consciousness-key-server
+    restart: unless-stopped
+    ports:
+      - "${KEY_SERVER_PORT:-3040}:3040"
+    environment:
+      KEY_SERVER_PORT: 3040
+      KEY_SERVER_HOST: 0.0.0.0
+    volumes:
+      # The vault itself — back this up.
+      - keys-data:/app/keys
+      # Append-only audit log.
+      - logs-data:/app/logs
+      # Auth config — bind-mount a real file on first run
+      # (copy auth/allowed-clients.example.json to auth/allowed-clients.json first).
+      - ./auth:/app/auth:ro
+    # Listening only on the Docker bridge by default. Do not expose publicly
+    # without a reverse proxy + TLS.
+    networks:
+      - default
+
+volumes:
+  keys-data:
+  logs-data:

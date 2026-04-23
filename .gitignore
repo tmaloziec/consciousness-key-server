@@ -1,0 +1,29 @@
+# Dependencies (there shouldn't be any, but just in case)
+node_modules/
+
+# Runtime state — NEVER commit any of these
+keys/ssh/*
+keys/*/api-key.txt
+logs/*.log
+
+# Environment
+.env
+.env.local
+
+# The real allow-list contains IPs — only the example ships.
+auth/allowed-clients.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Keep directory structure
+!keys/.gitkeep
+!logs/.gitkeep
+!auth/allowed-clients.example.json
